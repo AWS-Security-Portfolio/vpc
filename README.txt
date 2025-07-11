@@ -1,4 +1,5 @@
 (AWS Virtual Private Cloud Lab)
+Engineered segmented VPC networking with public/private subnets, NAT, and bastion host for secure, isolated AWS infrastructure.
 
 ## Table of Contents
 
