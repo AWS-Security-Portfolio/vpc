@@ -69,6 +69,8 @@ This project demonstrates the process of designing and deploying a secure Virtua
 
 ## Screenshots
 
+*All relevant screenshots demonstrating each step are included in the screenshots/ folder of this repository.
+
 | Order | File Name                                 | What it Shows                                          |
 | ----- | ----------------------------------------- | ------------------------------------------------------ |
 | 1     | terraforminit-success.png                 | Successful initialization of Terraform project         |
