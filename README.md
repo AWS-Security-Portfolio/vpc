@@ -25,13 +25,17 @@ Engineered segmented VPC networking with public/private subnets, NAT, and bastio
 
 This project demonstrates the process of designing and deploying a secure Virtual Private Cloud (VPC) in AWS using Terraform. The lab focuses on network segmentation, least-privilege access, and secure connectivity through public/private subnets, a NAT gateway, and a bastion host.
 
-*A diagram of the overall process is available in the repository folder.
+---
+
+## Diagram
+
+![Architecture Diagram](diagram.png)
 
 ---
 
 ## Objectives
 
--Create a custom VPC with public and private subnets.
+- Create a custom VPC with public and private subnets.
 - Deploy a bastion host for secure SSH access.
 - Deploy an application EC2 instance in a private subnet (no public IP).
 - Configure a NAT gateway to provide outbound internet for private resources.
@@ -91,41 +95,29 @@ This project demonstrates the process of designing and deploying a secure Virtua
 
 ## Screenshot Explanations
 
-1. terraforminit-success.png
-Initialized Terraform project to prepare for infrastructure deployment.
+1. terraforminit-success.png: Initialized Terraform project to prepare for infrastructure deployment.
 
-2. terraformapply-success.png
-Ran terraform apply and confirmed successful provisioning of all AWS resources.
+2. terraformapply-success.png: Ran terraform apply and confirmed successful provisioning of all AWS resources.
 
-3. vpc-success.png
-Verified the custom VPC is present with the correct CIDR block.
+3. vpc-success.png: Verified the custom VPC is present with the correct CIDR block.
 
-4 - 5. subnets-public-success.png & subnets-private-success.png
-Confirmed public and private subnets were created and configured properly.
+4 - 5. subnets-public-success.png & subnets-private-success.png: Confirmed public and private subnets were created and configured properly.
 
-6. igw-success.png
-Internet Gateway is attached to the VPC, allowing outbound Internet from the public subnet.
+6. igw-success.png: Internet Gateway is attached to the VPC, allowing outbound Internet from the public subnet.
 
-7. natgateway-success.png
-NAT Gateway created in public subnet for private subnet outbound Internet access.
+7. natgateway-success.png: NAT Gateway created in public subnet for private subnet outbound Internet access.
 
-8. ec2-elasticip-success.png
-Elastic IP address allocated and associated with the NAT Gateway.
+8. ec2-elasticip-success.png: Elastic IP address allocated and associated with the NAT Gateway.
 
-9 - 10. publicroutetable-success.png - publicroutetable-association-success.png
-Public route table set to send 0.0.0.0/0 traffic through IGW; associated with public subnet.
+9 & 10. publicroutetable-success.png - publicroutetable-association-success.png: Public route table set to send 0.0.0.0/0 traffic through IGW; associated with public subnet.
 
-11 - 12. privateroutetable-success.png - privateroutetable-association-success.png
-Private route table set to send 0.0.0.0/0 traffic through NAT Gateway; associated with private subnet.
+11 & 12. privateroutetable-success.png - privateroutetable-association-success.png: Private route table set to send 0.0.0.0/0 traffic through NAT Gateway; associated with private subnet.
 
-13. 3c2-instances-success.png
-Both bastion and private EC2 instances are running in their respective subnets.
+13. 3c2-instances-success.png: Both bastion and private EC2 instances are running in their respective subnets.
 
-14. ssh-bastion-connection.png
-Successfully connected via SSH to the bastion host (public subnet).
+14. ssh-bastion-connection.png: Successfully connected via SSH to the bastion host (public subnet).
 
-15. ssh-bastion-to-private-ec2.png
-SSH hop from bastion host to private EC2 instance (proving network isolation and bastion use).
+15. ssh-bastion-to-private-ec2.png: SSH hop from bastion host to private EC2 instance (proving network isolation and bastion use).
 
 ---
 
