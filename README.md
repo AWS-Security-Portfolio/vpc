@@ -7,6 +7,7 @@ Engineered segmented VPC networking with public/private subnets, NAT, and bastio
 ## Table of Contents
 
 - [Overview]
+- [Diagram]
 - [Objectives]
 - [Steps Performed]
   - [1. Terraform Initialization and Deployment]
