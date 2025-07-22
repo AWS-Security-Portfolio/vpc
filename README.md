@@ -7,6 +7,8 @@ Engineered segmented VPC networking with public/private subnets, NAT, and bastio
 ## Table of Contents
 
 - [Overview]
+- [Real-World Risk]
+- [What I Built]
 - [Diagram]
 - [Objectives]
 - [Steps Performed]
@@ -16,6 +18,7 @@ Engineered segmented VPC networking with public/private subnets, NAT, and bastio
   - [4. Route Tables]
   - [5. EC2 Deployment and Security]
   - [6. Connectivity Testing]
+  - [7. Cleaunp]
 - [Screenshots]
 - [Lessons Learned]
 - [References]
@@ -25,6 +28,24 @@ Engineered segmented VPC networking with public/private subnets, NAT, and bastio
 ## Overview
 
 This project demonstrates the process of designing and deploying a secure Virtual Private Cloud (VPC) in AWS using Terraform. The lab focuses on network segmentation, least-privilege access, and secure connectivity through public/private subnets, a NAT gateway, and a bastion host.
+
+---
+
+## Real-World Risk
+
+In real-world AWS environments, placing all cloud resources in a flat, public network dramatically increases the risk of unauthorized access, data breaches and lateral movement by attackers. Without proper network segmentation, a compromised instance with a public IP could be used as a pivot point to attack other assets, escalate privileges or exfiltrate sensitive data. Misconfigured security groups, open SSH ports and a lack of egress controls further expose your environment to brute-force attacks, malware and unmonitored outbound connections. Effective VPC design and segmentation, using bastion hosts and NAT gateways, are critical controls to contain and limit potential threats, enforcing the principle of least privilege at the network level.
+
+---
+
+## What I Built
+
+- A custom AWS VPC with both public and private subnets, enabling strict network segmentation.
+- Internet Gateway and NAT Gateway setup for safe outbound access while keeping private instances non-public.
+- Bastion host deployed in the public subnet, secured for SSH access from a trusted IP.
+- Application EC2 instance launched in the private subnet with no public IP, accessible only via the bastion.
+- Security groups enforcing least-privilege rules for all access points.
+- Automated all infrastructure deployment and teardown using Terraform.
+- Documentation and screenshots validating each security control and design decision.
 
 ---
 
@@ -70,6 +91,12 @@ This project demonstrates the process of designing and deploying a secure Virtua
 6. Connectivity Testing
    - Successfully SSH’d into the bastion host, then into the private EC2 from the bastion.
 
+7. Cleanup
+   - Destroyed all AWS resources using terraform destroy to prevent ongoing costs.
+   - Verified that all EC2 instances, NAT Gateway, Elastic IPs, custom VPC, subnets and associated security groups were deleted.
+   - Removed lab-specific SSH key pairs and released any unused resources from the AWS account.
+   - Checked AWS billing console to ensure no residual lab charges remained.
+   
 ---
 
 ## Screenshots
