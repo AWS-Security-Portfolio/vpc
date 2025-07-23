@@ -124,14 +124,9 @@ In real-world AWS environments, placing all cloud resources in a flat, public ne
 
 ## References
 
-- AWS VPC Documentation
-(https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
-
-- Terraform AWS Provider Docs
-(https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
-
-- AWS Security Best Practices
-(https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-fsbp.html)
+- [AWS VPC Documentation](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
+- [Terraform AWS Provider Docs](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+- [AWS Security Best Practices](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-fsbp.html)
 
 ---
 
