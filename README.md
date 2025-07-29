@@ -6,12 +6,12 @@ Engineered segmented VPC networking with public/private subnets, NAT, and bastio
 
 ## Table of Contents
 
-- [Overview]
-- [Real-World Risk]
-- [What I Built]
-- [Diagram]
-- [Objectives]
-- [Steps Performed]
+- [Overview](#overview)
+- [Real-World Risk](#real-world-risk)
+- [What I Built](#what-i-built)
+- [Diagram](#diagram)
+- [Objectives](#objectives)
+- [Steps Performed](#steps-performed)
   - [1. Terraform Initialization and Deployment]
   - [2. VPC and Subnet Configuration]
   - [3. Internet Gateway and NAT Gateway Setup]
@@ -19,9 +19,9 @@ Engineered segmented VPC networking with public/private subnets, NAT, and bastio
   - [5. EC2 Deployment and Security]
   - [6. Connectivity Testing]
   - [7. Cleaunp]
-- [Screenshots]
-- [Lessons Learned]
-- [References]
+- [Screenshots](#screenshots)
+- [Lessons Learned](#lessons-learned)
+- [References](#references)
 
 ---
 
