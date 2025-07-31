@@ -22,6 +22,7 @@ Engineered segmented VPC networking with public/private subnets, NAT, and bastio
 - [Screenshots](#screenshots)
 - [Lessons Learned](#lessons-learned)
 - [References](#references)
+- [Contact](#contact)
 
 ---
 
@@ -130,6 +131,7 @@ In real-world AWS environments, placing all cloud resources in a flat, public ne
 
 ---
 
-Sebastian Silva C. – July 2025 – Berlin, Germany.
-- [LinkedIn](https://www.linkedin.com/in/sebastiansilc/)
-- [GitHub](https://github.com/SebaSilC)
+## Contact
+
+Sebastian Silva C. – July, 2025 – Berlin, Germany.  
+[LinkedIn](https://www.linkedin.com/in/sebastiansilc) | [GitHub](https://github.com/SebaSilC) | [sebastian@playbookvisualarts.com](mailto:sebastian@playbookvisualarts.com)
