@@ -100,7 +100,7 @@ In real-world AWS environments, placing all cloud resources in a flat, public ne
 
 ## Screenshots
 
-*All screenshots are included in the screenshots/ folder of this repository.*
+*All screenshots are included in the `screenshots/` folder of this repository.*
 
 | Order | File Name                                 | What it Shows                                          |
 | ----- | ----------------------------------------- | ------------------------------------------------------ |
