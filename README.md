@@ -70,29 +70,28 @@ In real-world AWS environments, placing all cloud resources in a flat, public ne
 ## Steps Performed
 
 **1. Terraform Initialization and Deployment**
-   - Initialized the Terraform project to prepare for AWS infrastructure deployment *(Screenshot: terraforminit-success.png)*
-   - Ran terraform apply and confirmed successful provisioning of all AWS resources *(Screenshot: terraformapply-success.png)*
+   - Initialized the Terraform project to prepare for AWS infrastructure deployment *(Screenshot: `terraforminit-success.png`)*
+   - Ran terraform apply and confirmed successful provisioning of all AWS resources *(Screenshot: `terraformapply-success.png`)*
 
 **2. VPC and Subnet Configuration**
-   - Created a custom VPC (10.0.0.0/16) for network segmentation *(Screenshot: vpc-success.png)*
-   - Deployed a public subnet (10.0.1.0/24) and a private subnet (10.0.2.0/24), each configured in the correct availability zone.
-*(Screenshots: subnets-public-success.png, subnets-private-success.png)*
+   - Created a custom VPC (10.0.0.0/16) for network segmentation *(Screenshot: `vpc-success.png`)*
+   - Deployed a public subnet (10.0.1.0/24) and a private subnet (10.0.2.0/24), each configured in the correct availability zone *(Screenshots: `subnets-public-success.png` & `subnets-private-success.png`)*
 
 **3. Internet Gateway and NAT Gateway Setup**
-- Attached an Internet Gateway (IGW) to the VPC for public subnet internet connectivity *(Screenshot: igw-success.png)*
-- Allocated an Elastic IP address and created a NAT Gateway in the public subnet for private subnet outbound Internet access *(Screenshots: natgateway-success.png & ec2-elasticip-success.png)*
+- Attached an Internet Gateway (IGW) to the VPC for public subnet internet connectivity *(Screenshot: `igw-success.png`)*
+- Allocated an Elastic IP address and created a NAT Gateway in the public subnet for private subnet outbound Internet access *(Screenshots: `natgateway-success.png` & `ec2-elasticip-success.png`)*
 
 **4. Route Table Configuration**
-- Configured a public route table to send all outbound traffic (0.0.0.0/0) through the IGW and associated it with the public subnet *(Screenshots: publicroutetable-success.png & publicroutetable-association-success.png)*
-- Configured a private route table to send all outbound traffic (0.0.0.0/0) through the NAT Gateway and associated it with the private subnet *(Screenshots: privateroutetable-success.png & privateroutetable-association-success.png)*
+- Configured a public route table to send all outbound traffic (0.0.0.0/0) through the IGW and associated it with the public subnet *(Screenshots: `publicroutetable-success.png` & `publicroutetable-association-success.png`)*
+- Configured a private route table to send all outbound traffic (0.0.0.0/0) through the NAT Gateway and associated it with the private subnet *(Screenshots: `privateroutetable-success.png` & `privateroutetable-association-success.png`)*
 
 **5. EC2 Instance Deployment and Security**
 - Launched a bastion host in the public subnet with a public IP, secured for SSH access from a trusted IP.
-- Launched a private EC2 instance in the private subnet (no public IP), only accessible via SSH from the bastion host *(Screenshot: 3c2-instances-success.png)*
+- Launched a private EC2 instance in the private subnet (no public IP), only accessible via SSH from the bastion host *(Screenshot: `3c2-instances-success.png`)*
 
 **6. Connectivity Testing**
-- Connected via SSH to the bastion host in the public subnet *(Screenshot: ssh-bastion-connection.png)*
-- From the bastion host, established SSH access to the private EC2 instance, demonstrating enforced network isolation and bastion use *(Screenshot: ssh-bastion-to-private-ec2.png)*
+- Connected via SSH to the bastion host in the public subnet *(`Screenshot: ssh-bastion-connection.png`)*
+- From the bastion host, established SSH access to the private EC2 instance, demonstrating enforced network isolation and bastion use *(Screenshot: `ssh-bastion-to-private-ec2.png`)*
 
 **7. Cleanup**
 - Used terraform destroy to delete all lab resources and prevent ongoing AWS charges.
